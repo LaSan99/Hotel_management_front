@@ -10,7 +10,7 @@ function BookingsList() {
     const fetchBookings = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5050/bookings", {
+        const response = await axios.get("https://hotel-management-back.vercel.app/bookings", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setBookings(response.data);

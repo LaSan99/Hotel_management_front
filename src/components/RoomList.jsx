@@ -7,7 +7,7 @@ function RoomList() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios.get("http://localhost:5050/rooms", {
+    axios.get("https://hotel-management-back.vercel.app/rooms", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => setRooms(res.data))

@@ -32,7 +32,7 @@ function AdminUsers() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5050/admin/users', {
+      const response = await axios.get('https://hotel-management-back.vercel.app/admin/users', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsers(response.data);
@@ -50,7 +50,7 @@ function AdminUsers() {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5050/auth/register', formData, {
+      await axios.post('https://hotel-management-back.vercel.app/auth/register', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchUsers();
@@ -77,7 +77,7 @@ function AdminUsers() {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`http://localhost:5050/admin/users/${userId}`, 
+      await axios.patch(`https://hotel-management-back.vercel.app/admin/users/${userId}`, 
         { is_admin: isAdmin },
         { headers: { Authorization: `Bearer ${token}` }}
       );
@@ -98,7 +98,7 @@ function AdminUsers() {
       
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5050/admin/users/${userId}`, {
+        await axios.delete(`https://hotel-management-back.vercel.app/admin/users/${userId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchUsers();

@@ -28,7 +28,7 @@ function AdminBooking() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5050/admin/bookings', {
+      const response = await axios.get('https://hotel-management-back.vercel.app/admin/bookings', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setBookings(response.data);
@@ -45,7 +45,7 @@ function AdminBooking() {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`http://localhost:5050/admin/bookings/${bookingId}`, 
+      await axios.patch(`https://hotel-management-back.vercel.app/admin/bookings/${bookingId}`, 
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` }}
       );

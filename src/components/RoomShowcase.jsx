@@ -12,7 +12,7 @@ export const RoomShowcase = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get('http://localhost:5050/rooms');
+        const response = await axios.get('https://hotel-management-back.vercel.app/rooms');
         setRooms(response.data);
       } catch (err) {
         console.error('Error fetching rooms:', err);

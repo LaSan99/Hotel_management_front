@@ -35,7 +35,7 @@ function AdminRooms() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5050/rooms', {
+      const response = await axios.get('https://hotel-management-back.vercel.app/rooms', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRooms(response.data);
@@ -54,11 +54,11 @@ function AdminRooms() {
     const token = localStorage.getItem('token');
     try {
       if (editingRoom) {
-        await axios.put(`http://localhost:5050/rooms/${editingRoom._id}`, formData, {
+        await axios.put(`https://hotel-management-back.vercel.app/rooms/${editingRoom._id}`, formData, {
           headers: { Authorization: `Bearer ${token}` }
         });
       } else {
-        await axios.post('http://localhost:5050/rooms', formData, {
+        await axios.post('https://hotel-management-back.vercel.app/rooms', formData, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }
@@ -88,7 +88,7 @@ function AdminRooms() {
       
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5050/rooms/${roomId}`, {
+        await axios.delete(`https://hotel-management-back.vercel.app/rooms/${roomId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchRooms();

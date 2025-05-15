@@ -21,7 +21,7 @@ function Auth({ onLogin }) {
     e.preventDefault();
     setLoading(true);
     setError('');
-    const url = `http://localhost:5050/auth/${isLogin ? 'login' : 'register'}`;
+    const url = `https://hotel-management-back.vercel.app/auth/${isLogin ? 'login' : 'register'}`;
 
     try {
       const res = await axios.post(url, form);

@@ -20,7 +20,7 @@ const Profile = () => {
         const fetchData = async () => {
             try {
                 // Fetch user profile
-                const userResponse = await axios.get('http://localhost:5050/profile', {
+                const userResponse = await axios.get('https://hotel-management-back.vercel.app/profile', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -28,7 +28,7 @@ const Profile = () => {
                 setUser(userResponse.data);
 
                 // Fetch bookings
-                const bookingsResponse = await axios.get("http://localhost:5050/bookings", {
+                const bookingsResponse = await axios.get("https://hotel-management-back.vercel.app/bookings", {
                     headers: { 
                         'Authorization': `Bearer ${token}` 
                     }

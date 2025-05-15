@@ -32,15 +32,15 @@ function AdminDashboard() {
         
         // Create requests but handle them individually for better error handling
         const requests = [
-          axios.get('http://localhost:5050/admin/bookings', {
+          axios.get('https://hotel-management-back.vercel.app/admin/bookings', {
             headers: { Authorization: `Bearer ${token}` }
           }).catch(err => ({ data: [] })), // Return empty array on error
           
-          axios.get('http://localhost:5050/rooms', {
+          axios.get('https://hotel-management-back.vercel.app/rooms', {
             headers: { Authorization: `Bearer ${token}` }
           }).catch(err => ({ data: [] })), // Return empty array on error
           
-          axios.get('http://localhost:5050/admin/users', {
+          axios.get('https://hotel-management-back.vercel.app/admin/users', {
             headers: { Authorization: `Bearer ${token}` }
           }).catch(err => ({ data: [] })) // Return empty array on error
         ];

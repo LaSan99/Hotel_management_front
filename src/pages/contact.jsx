@@ -18,7 +18,7 @@ export default function Contact() {
     setStatus({ type: 'loading', message: 'Sending your inquiry...' });
 
     try {
-      const response = await axios.post('http://localhost:5050/contact', formData);
+      const response = await axios.post('https://hotel-management-back.vercel.app/contact', formData);
       setStatus({ type: 'success', message: response.data.message });
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
     } catch (error) {

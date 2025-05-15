@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { MenuIcon, XIcon, PhoneIcon, LogOutIcon } from 'lucide-react'
 
 export const Header = ({ onLogout, isAdmin }) => {
@@ -23,43 +23,43 @@ export const Header = ({ onLogout, isAdmin }) => {
           </div>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-gray-700 hover:text-blue-800 px-3 py-2 font-medium"
             >
               Home
-            </a>
-            <a
-              href="/rooms"
+            </Link>
+            <Link
+              to="/rooms"
               className="text-gray-700 hover:text-blue-800 px-3 py-2 font-medium"
             >
               Rooms
-            </a>
-            <a
-              href="#amenities"
+            </Link>
+            <Link
+              to="/#amenities"
               className="text-gray-700 hover:text-blue-800 px-3 py-2 font-medium"
             >
               Amenities
-            </a>
-            <a
-              href="#offers"
+            </Link>
+            <Link
+              to="/#offers"
               className="text-gray-700 hover:text-blue-800 px-3 py-2 font-medium"
             >
               Special Offers
-            </a>
-            <a
-              href="/profile"
+            </Link>
+            <Link
+              to="/profile"
               className="text-gray-700 hover:text-blue-800 px-3 py-2 font-medium"
             >
               Profile
-            </a>
+            </Link>
             {isAdmin && (
-              <a
-                href="/admin-dashboard"
+              <Link
+                to="/admin-dashboard"
                 className="text-blue-800 hover:text-blue-900 px-3 py-2 font-medium"
               >
                 Admin Dashboard
-              </a>
+              </Link>
             )}
           </nav>
           {/* Contact and Actions */}
@@ -97,43 +97,43 @@ export const Header = ({ onLogout, isAdmin }) => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="block px-3 py-2 text-gray-700 hover:text-blue-800 font-medium"
             >
               Home
-            </a>
-            <a
-              href="/rooms"
+            </Link>
+            <Link
+              to="/rooms"
               className="block px-3 py-2 text-gray-700 hover:text-blue-800 font-medium"
             >
               Rooms
-            </a>
-            <a
-              href="#amenities"
+            </Link>
+            <Link
+              to="/#amenities"
               className="block px-3 py-2 text-gray-700 hover:text-blue-800 font-medium"
             >
               Amenities
-            </a>
-            <a
-              href="#offers"
+            </Link>
+            <Link
+              to="/#offers"
               className="block px-3 py-2 text-gray-700 hover:text-blue-800 font-medium"
             >
               Special Offers
-            </a>
-            <a
-              href="/bookings"
+            </Link>
+            <Link
+              to="/profile"
               className="block px-3 py-2 text-gray-700 hover:text-blue-800 font-medium"
             >
               Profile
-            </a>
+            </Link>
             {isAdmin && (
-              <a
-                href="/admin-dashboard"
+              <Link
+                to="/admin-dashboard"
                 className="block px-3 py-2 text-blue-800 hover:text-blue-900 font-medium"
               >
                 Admin Dashboard
-              </a>
+              </Link>
             )}
             <div className="flex items-center text-blue-800 px-3 py-2">
               <PhoneIcon size={18} className="mr-2" />

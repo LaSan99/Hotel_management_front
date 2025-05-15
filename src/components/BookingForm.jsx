@@ -24,7 +24,7 @@ function BookingForm() {
     // Fetch room details
     const fetchRoom = async () => {
       try {
-        const response = await axios.get(`http://localhost:5050/rooms/${roomId}`, {
+        const response = await axios.get(`https://hotel-management-back.vercel.app/rooms/${roomId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setRoom(response.data);
@@ -90,7 +90,7 @@ function BookingForm() {
     console.log("Sending booking data:", bookingData);
     
     try {
-      const response = await axios.post("http://localhost:5050/book", bookingData, {
+      const response = await axios.post("https://hotel-management-back.vercel.app/book", bookingData, {
         headers: { 
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

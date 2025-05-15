@@ -6,7 +6,7 @@ function BookingHistory() {
   const [bookings, setBookings] = useState([]);
 
   const fetchBookings = () => {
-    axios.get(`http://localhost:5050/bookings?email=${email}`)
+    axios.get(`https://hotel-management-back.vercel.app/bookings?email=${email}`)
       .then(res => setBookings(res.data))
       .catch(err => console.error(err));
   };
