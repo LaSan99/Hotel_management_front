@@ -36,7 +36,7 @@ function App() {
 
   return (
     <Router>
-      <Header onLogout={handleLogout} isAdmin={isAdmin} />
+      <Header onLogout={handleLogout} isAdmin={isAdmin} isLoggedIn={isLoggedIn} />
       <Routes>
         <Route path="/login" element={
           isLoggedIn ? 
