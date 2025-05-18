@@ -4,15 +4,18 @@ import { QuickBookingForm } from './QuickBookingForm'
 export const HeroSection = () => {
   return (
     <section className="relative bg-gray-900 text-white">
-      {/* Hero background */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
-          backgroundPosition: 'center 30%',
-        }}
-      >
+      {/* Hero background video */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute min-h-full min-w-full object-cover"
+        >
+          <source src="/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -34,10 +37,6 @@ export const HeroSection = () => {
                 View Offers
               </button>
             </div>
-          </div>
-          {/* Booking form */}
-          <div className="w-full md:w-2/5">
-            <QuickBookingForm className="md:ml-auto" />
           </div>
         </div>
       </div>
